@@ -36,6 +36,9 @@ public class NavigationDrawerPostActivity extends AppCompatActivity {
 
         // Tie DrawerLayout events to the ActionBarToggle
         mDrawer.setDrawerListener(drawerToggle);
+        Fragment fragment = PageFragment.newInstance(0);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().add(R.id.flContent, fragment).commit();
     }
 
     private ActionBarDrawerToggle setupDrawerToggle() {
